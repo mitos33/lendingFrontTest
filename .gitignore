@@ -1,0 +1,53 @@
+#Backend
+
+backend/.DS_Store
+backend/.env
+backend/.flaskenv
+backend/*.pyc
+backend/*.pyo
+backend/env/
+backend/venv/
+backend/.venv/
+backend/env*
+backend/dist/
+backend/build/
+backend/*.egg
+backend/*.egg-info/
+backend/_mailinglist
+backend/.tox/
+backend/.cache/
+backend/.pytest_cache/
+backend/.idea/
+backend/docs/_build/
+backend/__pycache__
+backend/.vscode
+
+# Coverage reports
+backend/htmlcov/
+backend/.coverage
+backend/.coverage.*
+backend/*,cover
+
+#frontend
+
+# dependencies
+frontend/node_modules
+frontend//.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# production
+frontend/build
+
+# misc
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*

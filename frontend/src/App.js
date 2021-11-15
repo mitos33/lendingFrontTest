@@ -39,10 +39,11 @@ function App() {
     })
     .then(response => response.json())
     .then(response => {
+        //show the response in a toast
         notify(response);
     });
 
-    //Alert the response in a toast
+    
     const notify = (props) => toast(props.response, {
         type: props.status,
         theme: "colored"

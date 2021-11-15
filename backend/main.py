@@ -5,9 +5,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-
+#define endpoint
 @app.route('/requestLoan', methods=['POST']) 
 #This method takes the values inside the "request" object and evaluate them according to the established conditions
+#returns = {response: response, status: status}
 def requestLoan():
     if(request.json['taxId'] and request.json['businessName'] and request.json['requestedAmount']):
         try:
