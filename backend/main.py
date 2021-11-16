@@ -10,12 +10,12 @@ CORS(app)
 #This method takes the values inside the "request" object and evaluate them according to the established conditions
 #returns = {response: response, status: status}
 def requestLoan():
-    if(request.json['taxId'] and request.json['businessName'] and request.json['requestedAmount']):
+    if(request.json['tax_id'] and request.json['business_name'] and request.json['requested_amount']):
         try:
-            requested_amount = int(request.json['requestedAmount'])
+            requested_amount = int(request.json['requested_amount'])
 
             if requested_amount <= 0:
-                response = 'The requested amount must be greater than 0'
+                response = 'The requested amount must be greater than $0'
                 status = 'warning'
             elif requested_amount > 50000:
                 response = 'Declined'
@@ -34,5 +34,5 @@ def requestLoan():
         return jsonify(response = response, status = status)
 
     else:
-        return jsonify(response = 'Please, fill all the required fields.', status = 'warning')
+        return jsonify(response = 'Please, fill in all the required fields.', status = 'warning')
 

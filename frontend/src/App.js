@@ -9,9 +9,9 @@ const baseURL = "http://localhost:5000/requestLoan";
 function App() {
 
     //State variables
-    const [taxId, setTaxId] = React.useState('')
-    const [businessName, setBusinessName] = React.useState('')
-    const [requestedAmount, setRequestedAmount] = React.useState('')
+    const [tax_id, setTaxId] = React.useState('')
+    const [business_name, setBusinessName] = React.useState('')
+    const [requested_amount, setRequestedAmount] = React.useState('')
 
     
     //Set state values
@@ -35,19 +35,20 @@ function App() {
           'Content-Type': 'application/json',
         },
         //Create a JSON Object from state variables
-        body: JSON.stringify({ taxId, businessName, requestedAmount }),
+        body: JSON.stringify({ tax_id, business_name, requested_amount }),
     })
     .then(response => response.json())
     .then(response => {
-        //show the response in a toast
+        //shows the response in a toast notification
         notify(response);
     });
 
     
-    const notify = (props) => toast(props.response, {
-        type: props.status,
-        theme: "colored"
-    });
+    const notify = (props) => toast(
+        props.response, {
+            type: props.status,
+            theme: "colored"
+        });
 
     return (
         <Container className="d-grid h-100">
@@ -59,17 +60,17 @@ function App() {
 
             <Form.Group className="mb-3">
                 <label >Tax Id</label>
-                <Form.Control type="text" size="lg" value={taxId} onChange={changeTaxId}/>
+                <Form.Control type="text" size="lg" value={tax_id} onChange={changeTaxId}/>
             </Form.Group>
 
             <Form.Group className="mb-3">
                 <label>Business Name</label>
-                <Form.Control type="text" size="lg" value={businessName} onChange={changeBusinessName}/>
+                <Form.Control type="text" size="lg" value={business_name} onChange={changeBusinessName}/>
             </Form.Group>
 
             <Form.Group className="mb-3">
                 <label>Requested Amount</label>
-                <Form.Control type="number" size="lg" min="1" value={requestedAmount} onChange={changeRequestedAmount}/>
+                <Form.Control type="number" size="lg" value={requested_amount} onChange={changeRequestedAmount}/>
             </Form.Group>
 
             <div className="d-grid">
