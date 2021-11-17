@@ -77,7 +77,9 @@ function App() {
                 <Button variant="primary" size="lg" onClick={() => apply()}>Apply</Button>
             </div>
 
-            <ToastContainer />
+            <ToastContainer 
+                position="bottom-center"
+            />
         </Container>
     );
 }
